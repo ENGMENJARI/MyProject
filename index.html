@@ -35,8 +35,9 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script type="text/javascript" src='app.js'></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
- --><body ng-app="myApp" ng-controller="ctr">
+ --><body  ng-app="myApp" ng-controller="ctr">
 
 <h2>Student List</h2>
 
@@ -52,7 +53,7 @@
 </div>
 
 <p><button ng-click="remove()">Remove marked</button></p>
-<p><button ng-click="view()">view number of students</button></p>
+
 
 
 <script>
@@ -72,9 +73,7 @@ app.controller('ctr', function($scope) {
             if (!x.done) $scope.studentlist.push(x);
         });
     };
-    $scope.view=function(){
-      var count= console.log($scope.studentlist.length)
-    };
+    
 });
 </script>
 <div>
