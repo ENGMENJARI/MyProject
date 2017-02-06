@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body ng-app="myApp" ng-controller="ctr">
+
+<h2>Student List</h2>
+
+<form ng-submit="Add()">
+    <input type="text" ng-model="Input" size="50" placeholder="Add New">
+    <input type="submit" value="Add New">
+
+</form>
+
+<br>
+
+<div ng-repeat="x in studentlist">
+    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.studentname"></span>
+</div>
+
+<p><button ng-click="remove()">Remove marked</button></p>
+
+
+
+
+<div>
+    {{studentlist.length}}
+</div>
+<script type="text/javascript" src='app.js'></script>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src='app.js'></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+ --><body ng-app="myApp" ng-controller="ctr">
+
+<h2>Student List</h2>
+
+<form ng-submit="Add()">
+    <input type="text" ng-model="Input" size="50" placeholder="Add New">
+    <input type="submit" value="Add New">
+</form>
+
+<br>
+
+<div ng-repeat="x in studentlist">
+    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.studentname"></span>
+</div>
+
+<p><button ng-click="remove()">Remove marked</button></p>
+<p><button ng-click="view()">view number of students</button></p>
+
+
+<script>
+var app = angular.module('myApp', []); 
+app.controller('ctr', function($scope) {
+    $scope.studentlist = [{studentname:'', done:false}];
+
+    $scope.Add = function() {
+        $scope.studentlist.push({studentname:$scope.Input, done:false});
+        $scope.Input = "";
+    };
+
+    $scope.remove = function() {
+        var oldList = $scope.studentlist;
+        $scope.studentlist = [];
+        angular.forEach(oldList, function(x) {
+            if (!x.done) $scope.studentlist.push(x);
+        });
+    };
+    $scope.view=function(){
+      var count= console.log($scope.studentlist.length)
+    };
+});
+</script>
+<div>
+    {{studentlist.length}}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "studentlist",
+  "version": "1.0.0",
+  "description": "simple app to add or remove names",
+  "main": "app",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "'not defined'"
+  },
+  "keywords": [
+    "app"
+  ],
+  "author": "RBK",
+  "license": "ISC"
+}
