@@ -5,9 +5,8 @@ var PORT=process.env.PORT || 4000
 
 
 app.use(express.static(__dirname+'/'));
-app.listen(4000,function(){
-	console.log('listiening on port '+ PORT)
-})
+app.listen(PORT)
+	
+console.log('listiening on port '+ PORT)
 
-module.exports = app;
 
